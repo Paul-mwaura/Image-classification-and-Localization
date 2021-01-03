@@ -1,2 +1,3 @@
-# classification_TB
-Given x-ray images, classify if the patient has TB or not. 
+# Tuberculosis classification
+
+Given lung x-ray images, can you tell if a patient has TB or not

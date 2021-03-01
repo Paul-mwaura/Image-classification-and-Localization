@@ -3,6 +3,7 @@ from torchvision import models
 import torch.nn.functional as F
 from base import BaseModel
 
+
 class TBModel(BaseModel):
     def __init__(self):
         super().__init__()
@@ -14,5 +15,7 @@ class TBModel(BaseModel):
             nn.Dropout(0.3),
             nn.ReLU(),
             nn.Linear(128, 2))
-    def forward(self):        
-        return self.model
+
+    def forward(self, x):
+
+        return self.model(x)

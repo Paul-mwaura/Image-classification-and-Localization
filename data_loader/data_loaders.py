@@ -1,15 +1,15 @@
-from torchvision import datasets, transforms
+from torchvision import transforms
 from base import BaseDataLoader
 from torch.utils.data import Dataset
 from pathlib import Path
 import pandas as pd
 from PIL import Image
-
+import os
 
 class TBCDataset(Dataset):
     def __init__(self, data_dir, trsfm):
         self.imgs = [path for path in Path(data_dir).rglob('*.png')]
-        self.train = pd.read_csv('train.csv')
+        self.train = pd.read_csv(os.path.join('../','train.csv'))
         self.trsfm = trsfm
 
     def __len__(self):
